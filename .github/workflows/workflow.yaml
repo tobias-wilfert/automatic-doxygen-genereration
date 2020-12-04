@@ -11,7 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Doxygen
-        uses: mattnotmitt/doxygen-action@v1.1.0
+        uses: mattnotmitt/doxygen-action@v1
         with:
           working-directory: .
-          doxyfile-path: './docs'
