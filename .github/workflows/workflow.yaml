@@ -8,9 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Checkout 🛎️
+          uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+          with:
+            persist-credentials: false
       - name: Doxygen
         uses: mattnotmitt/doxygen-action@v1
         with:
           doxyfile-path: 'doxygen_configuration'
+      - name: Deploy 🚀
+          uses: JamesIves/github-pages-deploy-action@3.7.1
+          with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: gh-pages # The branch the action should deploy to.
+            FOLDER: docs # The folder the action should deploy.
+            CLEAN: true # Automatically remove deleted files from the deploy branch
