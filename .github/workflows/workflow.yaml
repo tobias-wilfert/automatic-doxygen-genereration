@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-          uses: actions/checkout@v2
-          with:
-            persist-credentials: false
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
       - name: Doxygen
         uses: mattnotmitt/doxygen-action@v1
         with:
           doxyfile-path: 'doxygen_configuration'
-      - name: Deploy
+      - name: Deploy 🚀
           uses: JamesIves/github-pages-deploy-action@3.7.1
           with:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
