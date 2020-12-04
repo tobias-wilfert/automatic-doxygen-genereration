@@ -16,10 +16,9 @@ jobs:
         uses: mattnotmitt/doxygen-action@v1
         with:
           doxyfile-path: 'doxygen_configuration'
-      - name: Deploy 🚀
+      - name: Deploy to GitHub Pages
           uses: JamesIves/github-pages-deploy-action@3.7.1
           with:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            BRANCH: gh-pages # The branch the action should deploy to.
-            FOLDER: docs # The folder the action should deploy.
-            CLEAN: true # Automatically remove deleted files from the deploy branch
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            branch: gh-pages
+            folder: docs
