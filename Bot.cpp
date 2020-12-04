@@ -1,12 +1,12 @@
 //============================================================================
-// Name        : main.cpp
+// Name        : Bot.cpp
 // Author      : Tobias Wilfert
 //============================================================================
 
 #include "Bot.h"
 
-int main() {
-  Bot bot{"Hello"};
-  bot.greet("World");
-  return 0;
+Bot::Bot(std::string greeting) : greeting(std::move(greeting)) {}
+
+void Bot::greet(const std::string &name) const {
+  std::cout << greeting  << " " << name << std::endl;
 }
