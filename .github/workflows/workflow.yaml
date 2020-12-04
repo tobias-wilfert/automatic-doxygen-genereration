@@ -8,17 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Doxygen
+      - name: Doxygen 🔧
         uses: mattnotmitt/doxygen-action@v1
         with:
           doxyfile-path: 'doxygen_configuration'
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
+          branch: github-pages
           folder: docs/html
